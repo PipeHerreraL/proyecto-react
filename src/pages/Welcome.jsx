@@ -11,11 +11,16 @@ const Welcome = () => {
     });
 
     useEffect(() => {
-        setFormData({
-            name: 'Bienvenido a React',
-            description: 'Shoulder drumstick leberkas velit ad ground round. Jowl voluptate pork chop ham hock veniam reprehenderit pork loin minim.',
-            profilePicture: 'https://cdn.pixabay.com/photo/2023/01/19/10/24/castle-7728772_1280.jpg',
-        });
+        const saved = JSON.parse(localStorage.getItem('userFormData'));
+        if (saved) {
+            setFormData(saved);
+        } else {
+            setFormData({
+                name: 'Bienvenido a React',
+                description: 'Shoulder drumstick leberkas velit ad ground round. Jowl voluptate pork chop ham hock veniam reprehenderit pork loin minim.',
+                profilePicture: 'https://cdn.pixabay.com/photo/2023/01/19/10/24/castle-7728772_1280.jpg',
+            });
+        }
     }, []);
 
     const handleChange = (event) => {
@@ -40,7 +45,8 @@ const Welcome = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Form submitted:', formData);
+        
+        localStorage.setItem('userFormData', JSON.stringify(formData));
     
         alert(`Guardado con éxito:\n\nNombre: ${formData.name}\nDescripción: ${formData.description}`);
     };
