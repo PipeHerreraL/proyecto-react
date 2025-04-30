@@ -15,6 +15,22 @@ const Welcome = () => {
                     title="Bienvenido a React"
                     description="Este es un componente dinámico con contenido personalizado desde props." 
             />
+
+            {/* Botón para cambiar el estado */}
+            <div className="m-10">
+                <button
+                    type="button"
+                    className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                    onClick={() => {
+                    setIsStudent(!isStudent);
+                    setShowButton(!showButton);
+                    }}
+                >
+                    {showButton ? 'Show text' : 'Hide text'}
+                </button>
+
+                {isStudent && <p>Welcome 😃</p>}
+            </div>
             </div>
 
             {/* Formulario */}
@@ -39,22 +55,8 @@ const Welcome = () => {
 
                 </form>
 
-                <div className="m-10">
-                    <button
-                        type="button"
-                        className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-                        onClick={() => {
-                        setIsStudent(!isStudent);
-                        setShowButton(!showButton);
-                        }}
-                    >
-                        {showButton ? 'Show text' : 'Hide text'}
-                    </button>
-
-                    {isStudent && <p>Welcome 😃</p>}
-                </div>
-
             </div>
+
         </div>
     );
 };
