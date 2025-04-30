@@ -1,5 +1,6 @@
 import { useI18n } from '../i18n';
 import { Link } from "react-router-dom";
+import reactLogo from '../assets/react.svg';
 
 const Header = () => {
     const { langCode, setLanguage, languages } = useI18n();
@@ -7,7 +8,10 @@ const Header = () => {
     return (
         <header className="w-full flex justify-between items-center px-6 py-4 bg-gray-100 shadow-md">
             <Link to="/welcome" className="text-xl font-semibold">
-                🌐 Mi Aplicación
+                <a href="" className="flex items-center space-x-2">
+                    <img src={reactLogo} className="w-8 h-8" alt="React logo" />
+                    <span>Mi Aplicación</span>
+                </a>
             </Link>
 
             <select
