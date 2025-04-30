@@ -2,10 +2,10 @@ import React, {useState} from 'react'
 import FormInput from './FormInput';
 
 
-const UserForm = ({ handleChange }) => {
+const UserForm = ({ handleChange, handleSubmit }) => {
 
     return (
-        <form className='px-8 py-4 border rounded-md'>
+        <form className='px-8 py-4 border rounded-md' onSubmit={handleSubmit}>
                     
             <FormInput
             label="Name"

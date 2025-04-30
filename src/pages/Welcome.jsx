@@ -38,6 +38,14 @@ const Welcome = () => {
         }
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('Form submitted:', formData);
+    
+        alert(`Guardado con éxito:\n\nNombre: ${formData.name}\nDescripción: ${formData.description}`);
+    };
+    
+
     return (
         <div className="flex justify-center mt-6">
             {/* Tarjeta */}
@@ -52,7 +60,11 @@ const Welcome = () => {
 
             {/* Formulario */}
             <div className="w-1/3">
-                <UserForm formData={formData} handleChange={handleChange} />
+                <UserForm 
+                    formData={formData} 
+                    handleChange={handleChange} 
+                    handleSubmit={handleSubmit}
+                />
             </div>
         </div>
     );
