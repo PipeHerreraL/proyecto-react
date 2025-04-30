@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import {t, useI18n} from './i18n.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
+  const { languages, langCode, setLanguage } = useI18n();
 
   return (
     <>
@@ -27,6 +29,17 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      <div>
+
+      <select value={langCode} onChange={(e) => setLanguage(e.target.value)}>
+        {languages.map(({ code, label }) => (
+          <option key={code} value={code}>
+            {label}
+          </option>
+        ))}
+      </select>
+    </div>
     </>
   )
 }

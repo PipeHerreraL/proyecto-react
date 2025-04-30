@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import { t } from '../i18n';
+
 const ChangeStateButton = () => {
 
     const [isStudent, setIsStudent] = useState(false);
@@ -14,10 +16,10 @@ const ChangeStateButton = () => {
                 setShowButton(!showButton);
                 }}
             >
-                {showButton ? 'Show text' : 'Hide text'}
+                {showButton ? t("changeStateButton.show") : t("changeStateButton.hide")}
             </button>
 
-            {isStudent && <p>Welcome 😃</p>}
+            {isStudent && <p>{t("changeStateButton.message")}</p>}
         </div>
     )
 }

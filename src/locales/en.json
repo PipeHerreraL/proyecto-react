@@ -1,0 +1,17 @@
+{
+    "changeStateButton": {
+        "show": "Show text",
+        "hide": "Hide text",
+        "message": "Welcome 😃"
+    },
+    "form": {
+        "name": "Name",
+        "description": "Description",
+        "age": "Age",
+        "profilePicture": "Profile picture",
+        "save": "Save"
+    },
+    "profile": {
+        "share": "Share"
+    }
+}
