@@ -2,55 +2,61 @@ import React, { useState, useEffect } from "react";
 import Profile from "../components/Profile";
 import ChangeStateButton from "../components/ChangeStateButton";
 import UserForm from "../components/UserForm";
+import { useRouteLoaderData } from "react-router-dom";
 
 const Welcome = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        description: '',
-        profilePicture: null,
-    });
+
+    const defaultValues = {
+        name: "Bienvenido a React",
+        description: "Shoulder drumstick leberkas velit ad ground round. Jowl voluptate pork chop ham hock veniam reprehenderit pork loin minim.",
+        profilePicture: "https://cdn.pixabay.com/photo/2023/01/19/10/24/castle-7728772_1280.jpg"
+    };
+
+    const [initialValues, setInitialValues] = useState(defaultValues);
+    const [formData, setFormData] = useState(defaultValues);
 
     useEffect(() => {
         const saved = JSON.parse(localStorage.getItem('userFormData'));
         if (saved) {
             setFormData(saved);
-        } else {
-            setFormData({
-                name: 'Bienvenido a React',
-                description: 'Shoulder drumstick leberkas velit ad ground round. Jowl voluptate pork chop ham hock veniam reprehenderit pork loin minim.',
-                profilePicture: 'https://cdn.pixabay.com/photo/2023/01/19/10/24/castle-7728772_1280.jpg',
-            });
+            setInitialValues(saved);
         }
     }, []);
 
     const handleChange = (event) => {
         const { name, value, files } = event.target;
 
-        if (name === 'profilePicture' && files && files[0]) {
+        if (name === 'profilePicture' && files.length > 0) {
             const reader = new FileReader();
             reader.onloadend = () => {
-                setFormData((prev) => ({
+                setFormData(prev => ({
                     ...prev,
-                    profilePicture: reader.result,
+                    profilePicture: reader.result
                 }));
             };
             reader.readAsDataURL(files[0]);
         } else {
-            setFormData((prev) => ({
+            setFormData(prev => ({
                 ...prev,
-                [name]: value,
+                [name]: value === '' ? initialValues[name] : value
             }));
         }
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        
+
         localStorage.setItem('userFormData', JSON.stringify(formData));
     
         alert(`Guardado con éxito:\n\nNombre: ${formData.name}\nDescripción: ${formData.description}`);
     };
     
+
+    function restore() {
+        setFormData(initialValues);
+        localStorage.removeItem('userFormData');
+        location.reload();
+    }
 
     return (
         <div className="flex justify-center mt-6">
@@ -62,6 +68,19 @@ const Welcome = () => {
                     description={formData.description}
                 />
                 <ChangeStateButton />
+
+                {/*
+                    <div className="m-10">
+                        <button
+                            type="button"
+                            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                            onClick={restore}
+                        >
+                            Restore data
+                        </button>
+                    </div>
+                */}
+
             </div>
 
             {/* Formulario */}

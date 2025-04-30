@@ -11,7 +11,7 @@ const Profile = ({ image, name, description }) => {
             </div>
 
             <div className='px-6 pt-4 pb-2'>
-                <button className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>Compartir</button>
+                <button className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2'>Share</button>
             </div>
         </div>
     )
