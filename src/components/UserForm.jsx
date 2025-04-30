@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import FormInput from './FormInput';
 
 
-const UserForm = ({ handleChangeName, handleChangeDescription, handleChangeImage}) => {
+const UserForm = ({ handleChange }) => {
 
     return (
         <form className='px-8 py-4 border rounded-md'>
@@ -11,14 +11,14 @@ const UserForm = ({ handleChangeName, handleChangeDescription, handleChangeImage
                     label="Name"
                     type="text"
                     name="name"
-                    onChange={handleChangeName}
+                    onChange={handleChange}
                     />
 
                     <FormInput
                     label="Description"
                     type="text"
                     name="description"
-                    onChange={handleChangeDescription}
+                    onChange={handleChange}
                     />
 
                     <FormInput
@@ -31,7 +31,7 @@ const UserForm = ({ handleChangeName, handleChangeDescription, handleChangeImage
                     label="Profile picture"
                     type="file"
                     name="profilePicture"
-                    onChange={handleChangeImage}
+                    onChange={handleChange}
                     />
 
             <div className='mt-8'>
