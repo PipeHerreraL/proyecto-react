@@ -1,12 +1,12 @@
 import React from 'react'
-const Profile = ({ image, title, description }) => {
+const Profile = ({ image, name, description }) => {
 
     return (
         <div className='max-w-sm rounded-md shadow-lg'>
             <img className='w-full' src={image} alt="profile" />
             
             <div className='px-6 py-4'>
-                <p className='font-bold text-xl mb-2'>{title}</p>
+                <p className='font-bold text-xl mb-2'>{name}</p>
                 <p className="text-gray-700 text-base">{description}</p>
             </div>
 
