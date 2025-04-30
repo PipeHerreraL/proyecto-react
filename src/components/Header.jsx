@@ -1,11 +1,15 @@
 import { useI18n } from '../i18n';
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const { langCode, setLanguage, languages } = useI18n();
 
     return (
         <header className="w-full flex justify-between items-center px-6 py-4 bg-gray-100 shadow-md">
-            <h1 className="text-xl font-semibold">🌐 Mi Aplicación</h1>
+            <Link to="/welcome" className="text-xl font-semibold">
+                🌐 Mi Aplicación
+            </Link>
+
             <select
                 value={langCode}
                 onChange={(event) => setLanguage(event.target.value)}

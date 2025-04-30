@@ -37,20 +37,6 @@ function App() {
         <p className="read-the-docs text-center mt-6 text-gray-500">
           Click on the Vite and React logos to learn more
         </p>
-
-        <div className="flex justify-center mt-8">
-          <select
-            value={langCode}
-            onChange={(e) => setLanguage(e.target.value)}
-            className="px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            {languages.map(({ code, label }) => (
-              <option key={code} value={code}>
-                {label}
-              </option>
-            ))}
-          </select>
-        </div>
       </MainLayout>
     </>
 
