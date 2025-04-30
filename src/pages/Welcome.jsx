@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Profile from "../components/Profile";
 import ChangeStateButton from "../components/ChangeStateButton";
 import UserForm from "../components/UserForm";
-import { useRouteLoaderData } from "react-router-dom";
+import MainLayout from "../layouts/MainLayout";
 
 const Welcome = () => {
 
@@ -59,39 +59,44 @@ const Welcome = () => {
     }
 
     return (
-        <div className="flex justify-center mt-6">
-            {/* Tarjeta */}
-            <div className="w-1/3">
-                <Profile
-                    image={formData.profilePicture}
-                    name={formData.name}
-                    description={formData.description}
-                />
+        <MainLayout>
+            <div className="flex gap-4 justify-center mt-6">
+                {/* Tarjeta */}
+                <div className="w-1/3">
+                    <Profile
+                        image={formData.profilePicture}
+                        name={formData.name}
+                        description={formData.description}
+                    />
+
+                    {/*
+                        <div className="m-10">
+                            <button
+                                type="button"
+                                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+                                onClick={restore}
+                            >
+                                Restore data
+                            </button>
+                        </div>
+                    */}
+
+                </div>
+
+                {/* Formulario */}
+                <div className="w-1/3">
+                    <UserForm 
+                        formData={formData} 
+                        handleChange={handleChange} 
+                        handleSubmit={handleSubmit}
+                    />
+                </div>
+            </div>
+            
+            <div className="flex justify-center mt-4">
                 <ChangeStateButton />
-
-                {/*
-                    <div className="m-10">
-                        <button
-                            type="button"
-                            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-                            onClick={restore}
-                        >
-                            Restore data
-                        </button>
-                    </div>
-                */}
-
             </div>
-
-            {/* Formulario */}
-            <div className="w-1/3">
-                <UserForm 
-                    formData={formData} 
-                    handleChange={handleChange} 
-                    handleSubmit={handleSubmit}
-                />
-            </div>
-        </div>
+        </MainLayout>
     );
 };
 
