@@ -2,12 +2,15 @@ import React from "react";
 
 const FormInput = ({ label, type, name, value, onChange, className = '', ...rest }) => (
     <div className={'mt-6 first:mt-0'}>
-        <span className="block text-sm font-medium text-slate-700">{label}</span>
+        <span className="block text-sm font-medium text-slate-700">
+            {label}
+        </span>
         <input
             type={type}
             name={name}
+            value={value}
             onChange={onChange}
-            placeholder={`${label}`}
+            placeholder={type !== 'range' ? `${label}` : undefined}
             className={`px-4 py-2 border rounded-md w-full ${className}`}
             {...rest}
         />

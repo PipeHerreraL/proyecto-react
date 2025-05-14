@@ -3,7 +3,7 @@ import FormInput from './FormInput';
 import { t } from '../i18n';
 
 
-const UserForm = ({ handleChange, handleSubmit }) => {
+const UserForm = ({ formData, handleChange, handleSubmit }) => {
 
     return (
         <form className='px-8 py-4 border rounded-md' onSubmit={handleSubmit}>
@@ -23,9 +23,13 @@ const UserForm = ({ handleChange, handleSubmit }) => {
             />
 
             <FormInput
-            label={t("form.age")}
+            label={`${t("form.age")} (${formData.age ?? 0})`}
             type="range"
             name="age"
+            value={formData.age ?? 0}
+            onChange={handleChange}
+            min="1"
+            max="100"
             />
 
             <FormInput

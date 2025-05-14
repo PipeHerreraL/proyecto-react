@@ -1,6 +1,6 @@
 import React from 'react'
 import { t } from '../i18n'
-const Profile = ({ image, name, description }) => {
+const Profile = ({ image, name, description, age }) => {
 
     return (
         <div className='max-w-sm rounded-md shadow-lg'>
@@ -9,6 +9,7 @@ const Profile = ({ image, name, description }) => {
             <div className='px-6 py-4'>
                 <p className='font-bold text-xl mb-2'>{name}</p>
                 <p className="text-gray-700 text-base">{description}</p>
+                <p className="text-gray-700 text-base"><strong>Edad:</strong> {age}</p>
             </div>
 
             <div className='px-6 pt-4 pb-2'>

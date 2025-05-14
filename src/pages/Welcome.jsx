@@ -9,7 +9,8 @@ const Welcome = () => {
     const defaultValues = {
         name: "Bienvenido a React",
         description: "Shoulder drumstick leberkas velit ad ground round. Jowl voluptate pork chop ham hock veniam reprehenderit pork loin minim.",
-        profilePicture: "https://cdn.pixabay.com/photo/2023/01/19/10/24/castle-7728772_1280.jpg"
+        profilePicture: "https://cdn.pixabay.com/photo/2023/01/19/10/24/castle-7728772_1280.jpg",
+        age: 25
     };
 
     const [initialValues, setInitialValues] = useState(defaultValues);
@@ -67,6 +68,7 @@ const Welcome = () => {
                         image={formData.profilePicture}
                         name={formData.name}
                         description={formData.description}
+                        age={formData.age}
                     />
 
                     {/*
