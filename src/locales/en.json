@@ -9,6 +9,8 @@
         "description": "Description",
         "age": "Age",
         "profilePicture": "Profile picture",
+        "upload": "Click to upload",
+        "dragAndDrop": "or drag and drop",
         "save": "Save"
     },
     "profile": {

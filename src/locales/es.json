@@ -9,6 +9,8 @@
         "description": "Descripción",
         "age": "Edad",
         "profilePicture": "Foto de perfil",
+        "upload": "Click para cargar",
+        "dragAndDrop": "o arrastrar y soltar",
         "save": "Guardar"
     },
     "profile": {
