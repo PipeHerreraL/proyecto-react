@@ -26,6 +26,14 @@ const FormInput = ({ label, type, name, value, onChange, className = '', ...rest
         onChange(event);
     };
 
+    const shortenFileName = (name, maxLength = 20) => {
+        if (name.length > maxLength) {
+            const extension = name.split('.').pop();
+            const baseName = name.slice(0, maxLength - extension.length - 3);
+            return `${baseName}...${extension}`;
+        }
+        return name;
+    }
 
     return (
         <div className="mt-6 first:mt-0">
@@ -57,7 +65,7 @@ const FormInput = ({ label, type, name, value, onChange, className = '', ...rest
                         <span className="font-semibold">{t("form.upload")}</span> {t("form.dragAndDrop")}
                     </p>
                     {fileName && (
-                        <p className="text-xs text-gray-500 mt-1 truncate">{fileName}</p>
+                        <p className="text-xs text-gray-500 mt-1 truncate">{shortenFileName(fileName)}</p>
                     )}
                     <input
                         id={name}
