@@ -1,6 +1,20 @@
 import React from 'react'
 import { t } from '../i18n'
+import CustomButton from './CustomButton'
+
 const Profile = ({ image, name, description, age }) => {
+
+    const AgeEmoji = () => {
+        if (age < 18) {
+            return '👶';
+        } else if (age < 30) {
+            return '🧑';
+        } else if (age < 50) {
+            return '🧔';
+        } else {
+            return '👴';
+        }
+    }
 
     return (
         <div className='max-w-sm rounded-md shadow-lg'>
@@ -9,11 +23,13 @@ const Profile = ({ image, name, description, age }) => {
             <div className='px-6 py-4'>
                 <p className='font-bold text-xl mb-2'>{name}</p>
                 <p className="text-gray-700 text-base">{description}</p>
-                <p className="text-gray-700 text-base"><strong>Edad:</strong> {age}</p>
+                <p className="text-gray-700 text-base"><strong>Edad:</strong> {age} {AgeEmoji()}</p>
             </div>
 
             <div className='px-6 pt-4 pb-2'>
-                <button className='inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-300 hover:text-gray-800 transition'>{t('profile.share')}</button>
+                <CustomButton>
+                    {t('profile.share')}
+                </CustomButton>
             </div>
         </div>
     )

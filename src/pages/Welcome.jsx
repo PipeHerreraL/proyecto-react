@@ -49,7 +49,7 @@ const Welcome = () => {
 
         localStorage.setItem('userFormData', JSON.stringify(formData));
     
-        alert(`Guardado con éxito:\n\nNombre: ${formData.name}\nDescripción: ${formData.description}`);
+        alert(`Guardado con éxito:\n\nNombre: ${formData.name}\nDescripción: ${formData.description}\nEdad: ${formData.age}`);
     };
     
 

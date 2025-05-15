@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import FormInput from './FormInput';
+import CustomButton from './CustomButton';
 import { t } from '../i18n';
 
 
@@ -29,7 +30,7 @@ const UserForm = ({ formData, handleChange, handleSubmit }) => {
             value={formData.age ?? 0}
             onChange={handleChange}
             min="1"
-            max="100"
+            max="99"
             />
 
             <FormInput
@@ -40,7 +41,9 @@ const UserForm = ({ formData, handleChange, handleSubmit }) => {
             />
 
             <div className='mt-8'>
-                <button className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 hover:bg-gray-300 hover:text-gray-800 transition">{t('form.save')}</button>
+                <CustomButton>
+                    {t('form.save')}
+                </CustomButton>
             </div>
 
         </form>
