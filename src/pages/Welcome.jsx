@@ -51,9 +51,8 @@ const Welcome = () => {
     
         alert(`Guardado con éxito:\n\nNombre: ${formData.name}\nDescripción: ${formData.description}\nEdad: ${formData.age}`);
     };
-    
 
-    function restore() {
+    const restore = () => {
         setFormData(initialValues);
         localStorage.removeItem('userFormData');
         location.reload();

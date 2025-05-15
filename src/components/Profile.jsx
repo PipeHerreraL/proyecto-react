@@ -4,7 +4,7 @@ import CustomButton from './CustomButton'
 
 const Profile = ({ image, name, description, age }) => {
 
-    const AgeEmoji = () => {
+    const ageEmoji = () => {
         if (age < 18) {
             return '👶';
         } else if (age < 30) {
@@ -23,7 +23,7 @@ const Profile = ({ image, name, description, age }) => {
             <div className='px-6 py-4'>
                 <p className='font-bold text-xl mb-2'>{name}</p>
                 <p className="text-gray-700 text-base">{description}</p>
-                <p className="text-gray-700 text-base"><strong>Edad:</strong> {age} {AgeEmoji()}</p>
+                <p className="text-gray-700 text-base"><strong>Edad:</strong> {age} {ageEmoji()}</p>
             </div>
 
             <div className='px-6 pt-4 pb-2'>
