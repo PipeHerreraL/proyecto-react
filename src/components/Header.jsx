@@ -1,6 +1,7 @@
 import { useI18n } from '../i18n';
 import { Link } from "react-router-dom";
 import reactLogo from '../assets/react.svg';
+import { t } from "../i18n";
 
 const Header = () => {
     const { langCode, setLanguage, languages } = useI18n();
@@ -13,18 +14,23 @@ const Header = () => {
                     <span>Mi Aplicación</span>
                 </a>
             </Link>
+            <nav className="flex space-x-6 items-center">
+                <Link to="/events" className="text-gray-700 hover:text-blue-600 font-medium">
+                    {t("nav.events")}
+                </Link>
 
-            <select
-                value={langCode}
-                onChange={(event) => setLanguage(event.target.value)}
-                className="px-3 py-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >
-                {languages.map(({ code, label }) => (
-                <option key={code} value={code}>
-                    {label}
-                </option>
-                ))}
-            </select>
+                <select
+                    value={langCode}
+                    onChange={(event) => setLanguage(event.target.value)}
+                    className="px-3 py-1 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                    {languages.map(({ code, label }) => (
+                        <option key={code} value={code}>
+                            {label}
+                        </option>
+                    ))}
+                </select>
+            </nav>
         </header>
     );
 };

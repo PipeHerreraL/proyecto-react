@@ -68,5 +68,8 @@
     },
     "select": {
         "label": "Selecciona una opción"
+    },
+    "nav": {
+        "events": "Eventos"
     }
 }
