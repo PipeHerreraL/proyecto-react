@@ -15,5 +15,61 @@
     },
     "profile": {
         "share": "Compartir"
+    },
+    "eventExamples": {
+        "title": "Ejemplos de eventos en React"
+    },
+    "tabs": {
+        "click": "Clic",
+        "mouse": "Ratón",
+        "keyboard": "Teclado",
+        "form": "Formulario",
+        "clipboard": "Portapapeles",
+        "drag": "Arrastrar",
+        "scrollAndResize": "Scroll y Redimensión",
+        "select": "Seleccionar"
+    },
+    "click": {
+        "clickButton": "Haz clic aquí",
+        "clickCount": "Has hecho clic",
+        "times": "veces"
+    },
+    "mouse": {
+        "hoverMessage": "¡Estás sobre mí!",
+        "doubleClickMessage": "¡Doble clic detectado!",
+        "interactHere": "Interacciona con el ratón aquí"
+    },
+    "keyboard": {
+        "placeholder": "Escribe algo",
+        "currentValue": "Valor actual",
+        "inputFocused": "Campo enfocado",
+        "keyDown": "Tecla presionada",
+        "keyUp": "Tecla liberada"
+    },
+    "formEvent": {
+        "name": "Nombre",
+        "save": "Guardar",
+        "submitMessage": "Formulario enviado con"
+    },
+    "clipboard": {
+        "placeholder": "Copia o pega aquí",
+        "copyMessage": "Texto copiado al portapapeles",
+        "pasteMessage": "Texto pegado desde el portapapeles"
+    },
+    "drag": {
+        "draggableText": "Arrástrame",
+        "dragging": "Arrastrando...",
+        "dragEnd": "Arrastre terminado"
+    },
+    "scroll": {
+        "scrollY": "Posición actual del scroll Y",
+        "windowSize": "Tamaño de la ventana",
+        "contentLine": "Línea de contenido desplazable"
+    },
+    "select": {
+        "label": "Selecciona una opción"
+    },
+    "nav": {
+        "events": "Eventos"
     }
 }

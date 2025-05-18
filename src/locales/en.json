@@ -15,5 +15,61 @@
     },
     "profile": {
         "share": "Share"
+    },
+    "eventExamples": {
+        "title": "Event Examples in React"
+    },
+    "tabs": {
+        "click": "Click",
+        "mouse": "Mouse",
+        "keyboard": "Keyboard",
+        "form": "Form",
+        "clipboard": "Clipboard",
+        "drag": "Drag",
+        "scrollAndResize": "Scroll & Resize",
+        "select": "Select"
+    },
+    "click": {
+        "clickButton": "Click here",
+        "clickCount": "You clicked",
+        "times": "times"
+    },
+    "mouse": {
+        "hoverMessage": "You're hovering me!",
+        "doubleClickMessage": "Double click detected!",
+        "interactHere": "Interact with the mouse here"
+    },
+    "keyboard": {
+        "placeholder": "Type something",
+        "currentValue": "Current value",
+        "inputFocused": "Input focused",
+        "keyDown": "Key pressed",
+        "keyUp": "Key released"
+    },
+    "formEvent": {
+        "name": "Name",
+        "save": "Save",
+        "submitMessage": "Form submitted with"
+    },
+    "clipboard": {
+        "placeholder": "Copy or paste here",
+        "copyMessage": "Text copied to clipboard",
+        "pasteMessage": "Text pasted from clipboard"
+    },
+    "drag": {
+        "draggableText": "Drag me",
+        "dragging": "Dragging...",
+        "dragEnd": "Drag ended"
+    },
+    "scroll": {
+        "scrollY": "Scroll Y current",
+        "windowSize": "Window size",
+        "contentLine": "Scrollable content line"
+    },
+    "select": {
+        "label": "Select an option"
+    },
+    "nav": {
+        "events": "Events"
     }
 }

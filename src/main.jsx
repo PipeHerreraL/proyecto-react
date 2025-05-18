@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import Welcome from './pages/Welcome.jsx';
+import Events from './pages/Events.jsx';
 import './index.css'
 import {
   createBrowserRouter,
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "welcome",
     element: <Welcome />
+  },
+  {
+    path: "events",
+    element: <Events />
   },
 ])
 
